@@ -1,7 +1,7 @@
 import java.sql.*;
 
 public class JDBC01_Query {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // 1) ilgili dirver yükle
 
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -14,6 +14,7 @@ public class JDBC01_Query {
         // 3- sql sorguları icin kendimizebir alan acıyoruz
          Statement st =  con.createStatement();
          // dataları alıp bir sete atıyoruz
+
         ResultSet data = st.executeQuery("SELECT * FROM CALISANLAR");
 
         while(data.next()){
